@@ -1,6 +1,12 @@
 import pytest
 
-from practice.stats_basics import calculate_mean, above_average_count, mmr, deviation
+from practice.stats_basics import (
+    calculate_mean,
+    above_average_count,
+    mmr,
+    deviation,
+    mode,
+)
 
 
 # test mean calculator
@@ -109,3 +115,29 @@ def test_deviation_single_number():
 
 def test_deviation_sum_is_zero():
     assert sum(deviation([2, 4, 9])) == pytest.approx(0)
+
+
+# test mode (most common value)
+def test_mode_all_uppercase():
+    assert mode(["A", "B", "A", "C", "A"]) == "A"
+
+
+def test_mode_is_case_sensitive():
+    assert mode(["A", "a", "a"]) == "a"
+
+
+def test_mode_numbers():
+    assert mode([1, 2, 3, 4, 5, 6, 7, 1]) == 1
+
+
+def test_mode_tie():
+    assert set(mode(["A", "A", "B", "B"])) == {"A", "B"}
+
+
+def test_mode_one_item():
+    assert mode(["A"]) == "A"
+
+
+def test_mode_raises_value_error():
+    with pytest.raises(ValueError, match="empty list"):
+        mode([])

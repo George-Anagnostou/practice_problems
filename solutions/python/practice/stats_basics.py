@@ -51,3 +51,26 @@ def deviation(numbers):
         deviation = number - mean
         deviations.append(deviation)
     return deviations
+
+
+def mode(items):
+    if len(items) == 0:
+        raise ValueError("cannot calcualte mode of an empty list")
+
+    counts = {}
+    for item in items:
+        counts[item] = counts.get(item, 0) + 1
+
+    largest_count = 0
+    for value in counts.values():
+        if value >= largest_count:
+            largest_count = value
+
+    results = []
+    for k, v in counts.items():
+        if v >= largest_count:
+            results.append(k)
+
+    if len(results) == 1:
+        return results[0]
+    return results
