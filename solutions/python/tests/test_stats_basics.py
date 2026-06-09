@@ -1,6 +1,6 @@
 import pytest
 
-from practice.stats_basics import calculate_mean, above_average_count
+from practice.stats_basics import calculate_mean, above_average_count, mmr, deviation
 
 
 # test mean calculator
@@ -53,3 +53,59 @@ def test_above_average_count_decimal_numbers():
 def test_above_average_count_raises_value_error():
     with pytest.raises(ValueError, match="empty list"):
         above_average_count([])
+
+
+# test min_max_range
+def test_mmr_multiple_positive_numbers():
+    assert mmr([1, 2, 3, 4, 5]) == (1, 5, 4)
+
+
+def test_mmr_single_number():
+    assert mmr([4]) == (4, 4, 0)
+
+
+def test_mmr_repeated():
+    assert mmr([3, 3, 3]) == (3, 3, 0)
+
+
+def test_mmr_decimal_numbers():
+    assert mmr([1.2, 32.4, 50.1]) == (1.2, 50.1, 48.9)
+
+
+def test_mmr_negative_numbers():
+    assert mmr([10, -12, -2, 4, -1.23]) == (-12, 10, 22)
+
+
+def test_mmr_raises_value_error():
+    with pytest.raises(ValueError, match="empty list"):
+        mmr([])
+
+
+# test deviation (distance from mean)
+def test_deviation_positive_numbers():
+    assert deviation([8, 10, 12]) == [-2, 0, 2]
+
+
+def test_deviation_negative_numbers():
+    assert deviation([-1, 0, 1]) == [-1, 0, 1]
+
+
+def test_deviation_raises_value_error():
+    with pytest.raises(ValueError, match="empty list"):
+        deviation([])
+
+
+def test_deviation_decimal_mean():
+    assert deviation([1, 2]) == pytest.approx([-0.5, 0.5])
+
+
+def test_deviation_all_values_equal():
+    assert deviation([7, 7, 7]) == [0, 0, 0]
+
+
+def test_deviation_single_number():
+    assert deviation([42]) == [0]
+
+
+def test_deviation_sum_is_zero():
+    assert sum(deviation([2, 4, 9])) == pytest.approx(0)
