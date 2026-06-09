@@ -24,8 +24,6 @@ tests/
   test_finance_basics.py
   test_ml_basics.py
   test_research_data_basics.py
-notes/
-  ticket-001-mean-calculator.md
 ```
 
 Group related tickets in the same module. For example, Tickets 1-5 can live in

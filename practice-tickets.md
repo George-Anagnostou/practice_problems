@@ -9,7 +9,7 @@ Small programming challenges for fundamentals practice. These are language-agnos
 3. Implement the simplest version that solves only those examples.
 4. Add edge-case tests.
 5. Refactor only after the tests pass.
-6. Write a short note explaining the approach and any assumptions.
+6. Keep any important assumptions close to the relevant code or test.
 
 ## Testing Checklist
 
@@ -528,20 +528,9 @@ Your tests are probably good enough for these small tickets when:
 - They force you to define ambiguous behavior, such as ties or empty input.
 - They would fail if you hard-coded the example output.
 
-For each ticket, write a short "test notes" section:
-
-```txt
-Assumptions:
-- Empty input returns an error.
-- Ties return the first matching item.
-- Matching is case-insensitive.
-
-Cases tested:
-- Normal case.
-- Empty input.
-- Tie case.
-- Repeated values.
-```
+For each ticket, keep assumptions visible in the tests themselves. Prefer clear
+test names, expected values, and small comments only when a behavior choice
+would otherwise be unclear.
 
 ## How To Generate Mock Input
 
@@ -589,4 +578,3 @@ The review should check:
 - Whether expected outputs are mathematically correct.
 - Whether tests can catch realistic bugs.
 - Whether the code is more complicated than the problem requires.
-

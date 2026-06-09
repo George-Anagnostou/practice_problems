@@ -3,8 +3,8 @@
 Basic practice problems for getting reps with different languages, techniques,
 domains, and stacks.
 
-The goal is simple: solve small challenges consistently, write enough tests to
-prove the solution, and keep short notes about what was learned.
+The goal is simple: solve small challenges consistently and write enough tests
+to prove the solution.
 
 ## Assistant Role
 
@@ -38,8 +38,6 @@ solutions/
       test_finance_basics.<ext>
       test_ml_basics.<ext>
       test_research_data_basics.<ext>
-    notes/
-      ticket-001-mean-calculator.md
 skills/
   review-practice-ticket/
     SKILL.md
@@ -65,7 +63,6 @@ Each language folder should contain:
 - `README.md`: how to run tests and how that language project is organized.
 - source files grouped by topic, such as `stats_basics` or `finance_basics`.
 - `tests/`: grouped tests matching the topic files.
-- `notes/`: short per-ticket notes about assumptions, mistakes, and follow-ups.
 
 Use `src/` only when it fits the language or tooling. For Python, this repo uses
 a simple root package with one `uv` project in `solutions/python`.
@@ -107,7 +104,6 @@ the repo flatter than one-folder-per-ticket.
 7. Implement the smallest correct solution.
 8. Run the tests.
 9. Ask Codex to review the completed ticket.
-10. Update `notes/ticket-###-slug.md` with mistakes, edge cases, and follow-ups.
 
 Keep each challenge scoped to 30-60 minutes. Prefer finishing a small ticket
 cleanly over expanding the problem.

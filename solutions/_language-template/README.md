@@ -24,8 +24,6 @@ src or package directory
 tests/
   test_stats_basics.<ext>
   test_finance_basics.<ext>
-notes/
-  ticket-001-mean-calculator.md
 ```
 
 Group related tickets together. Add new files only when a domain or topic gets

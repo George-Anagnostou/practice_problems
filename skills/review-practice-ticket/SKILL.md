@@ -16,7 +16,7 @@ explicitly asks for edits. Explain failures and suggest fixes instead.
 
 ## Review Workflow
 
-1. Locate the language project, implementation, tests, and notes.
+1. Locate the language project, implementation, and tests.
 2. Read the original ticket from `practice-tickets.md` when available.
 3. Identify the language, test command, and project layout.
 4. Run the existing tests when feasible.
@@ -95,7 +95,7 @@ Test Gaps
 - ...
 
 Verdict
-- Not done yet / Accepted with notes / Accepted
+- Not done yet / Accepted with caveats / Accepted
 
 Next Rep
 - ...

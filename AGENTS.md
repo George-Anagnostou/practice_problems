@@ -19,7 +19,7 @@ tests. The assistant's role is to guide, organize, review, and audit.
 
 - Read files.
 - Run tests, linters, formatters, or local inspection commands when useful.
-- Update project documentation, workflow notes, scaffold files, or assistant
+- Update project documentation, workflow files, scaffold files, or assistant
   instructions when the user asks to organize the project.
 - Create or update review/audit checklists.
 
