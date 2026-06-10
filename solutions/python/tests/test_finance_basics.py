@@ -1,6 +1,12 @@
 import pytest
 
-from practice.finance_basics import pnl, portfolio_weights, Position, portfolio_value
+from practice.finance_basics import (
+    pnl,
+    portfolio_weights,
+    Position,
+    portfolio_value,
+    price_change,
+)
 
 
 # profit or loss
@@ -132,3 +138,28 @@ def test_portfolio_weights_duplicate_holdings():
 
     assert weights["AAPL"] == 0.5
     assert weights["MSFT"] == 0.5
+
+
+# test daily price changes
+def test_price_change():
+    assert price_change([100, 105, 103, 110]) == [5, -2, 7]
+
+
+def test_price_change_increasing():
+    assert price_change([100, 102, 110, 113]) == [2, 8, 3]
+
+
+def test_price_change_decreasing():
+    assert price_change([100, 99, 88, 8]) == [-1, -11, -80]
+
+
+def test_price_change_repeating():
+    assert price_change([100, 101, 101, 102]) == [1, 0, 1]
+
+
+def test_price_change_no_prices():
+    assert price_change([]) == []
+
+
+def test_price_change_one_price():
+    assert price_change([1]) == []

@@ -40,3 +40,17 @@ def portfolio_weights(portfolio: list[Position]) -> dict[str, float]:
         weights[position.ticker] = weights.get(position.ticker, 0) + weight
 
     return weights
+
+
+def price_change(prices: list[int | float]) -> list[int | float]:
+    if len(prices) <= 1:
+        return []
+
+    last_price = prices[0]
+    changes = []
+    for price in prices[1:]:
+        change = price - last_price
+        changes.append(change)
+        last_price = price
+
+    return changes
